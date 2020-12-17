@@ -33,12 +33,62 @@ $(document).keypress(
             }    
     });
 
-
-function saveCityToArray
+//checks to see which cities are in the array and stores new cities
+function saveCityToArray(object) {
+    if (citiesArray.includes(object.name)) {
+        console.log("city name already selected");
+        return;
+    } else {
+        citiesArray.push(object.name);
+        storedCities();
+    };
+};
 
 //API call from open weather API
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey;
+function openWeatherAPIRequest() {
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey;
+    //jQuery ajax method pulls info from the API
+    $.ajax({
+     url: queryURL,
+     method: "GET"
+     //.then promises to retun the function (in this API) and captures the response
+    }).then(function (response) {
+        console.log("response: ", response);
 
-$.ajax({
-    url: queryURL,
-    method: "GET"})
+        saveCityToArray(response);
+        $("#current-city-name").text(response.name);
+        $("#current-date").text(now.format("dddd mmmm do"));
+    
+        console.log("Currently saved cities:  ", citiesArray);
+        currentWeather.empty();
+        forecast.empty();
+        latitude = response.coord.lat;
+        longitude = response.coord.lon;
+
+        coordinates (latitude, longitude);
+    });
+
+};
+
+function coordinates(latitude, longitude) {
+    var queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude + "&lon=" + longitude + "&appid=" + APIKey;
+     //jQuery ajax method pulls info from the API
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+        //.then promises to retun the function (in this API) and captures the response
+    }).then(function (response) {
+
+        currentWeather(response.current);
+        console.log(response);
+
+        for (i = )
+
+    })
+
+
+
+
+
+
+}
