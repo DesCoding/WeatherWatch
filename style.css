@@ -7,3 +7,10 @@ height: 100px;
 color: white;
 font-family:'Courier New', Courier, monospace;
 }
+
+
+
+#five-day-forecast {
+    width: 100%;
+    background-origin: padding-box;
+}
