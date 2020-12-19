@@ -8,9 +8,158 @@ color: white;
 font-family:'Courier New', Courier, monospace;
 }
 
+h1{
+    font-size: 60px ;
 
+}
+h2 {
+    font-size: 40px;
+}
+#side-bar {
+    background-color: rgb(230, 230, 230);
+  
+    
+}
+
+aside {
+    padding-top: 5px;
+    margin: 10px;
+}
+
+.container {
+   margin-left: 60px;
+    
+}
+#form {
+    padding-top: 5px;
+}
+
+#current-city-info {
+    
+    margin-top: 10px;
+    height: 500px;
+    margin-bottom: 30px;
+   
+
+    
+}
+.daily-forecast{
+    margin: 10px; 
+    margin-top: 10px;
+    width: 16rem !important;
+    
+} 
 
 #five-day-forecast {
     width: 100%;
     background-origin: padding-box;
 }
+
+.button-group {
+    margin-top: 15px;
+    
+}
+h4 {
+    padding-top: 50px;
+}
+
+.card {
+    width: 1400px;
+}
+.current-card {
+    width: 1350px;
+}
+
+.main-row {
+    height: 850px;
+}
+#uvi-low {
+    background-color: rgb(130, 255, 92);
+    border-radius: 5px;
+    padding: 10px;
+    
+}
+
+#uvi-mid {
+    background-color: rgb(255, 190, 71);
+    border-radius: 5px;
+    padding: 10px;
+    
+
+}
+
+#uvi-high {
+    background-color: rgb(255, 80, 80);
+    border-radius: 5px;
+    padding: 10px;
+    
+}
+@media screen and (max-width: 1750px){
+    .my-container {
+        margin-left: 10px;
+        
+    }
+    .card {
+        width: 1000px;
+    }
+    .current-card {
+        width: 950px;
+    }
+    .daily-forecast{
+        margin: 5px; 
+
+        margin-top: 10px;
+        width: 12rem !important;
+    } 
+
+}
+@media screen and (max-width: 1350px){
+    .my-container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .card {
+        width: 800px;
+    }
+    .current-card {
+        width: 740px;
+    }
+    .city-btn {
+        width: 150px;
+    }
+   
+}
+
+@media screen and (max-width: 750px){
+    .my-container {
+        margin: auto;
+        
+    }
+    .card {
+        width: auto;
+    }
+    .current-card {
+        width: auto;
+    }
+    .city-btn {
+        width: 100%;
+        
+    }
+    .daily-forecast{
+        margin: auto; 
+
+        margin-top: 10px;
+        width: 20rem !important;
+    } 
+    h2 {
+        font-size: 30px;
+    }
+   body{
+       text-align: center;
+   }
+   form{
+       margin-left: 25%;
+       margin-right: auto;
+   }
+}
+
