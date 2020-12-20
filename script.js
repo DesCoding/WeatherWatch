@@ -1,9 +1,10 @@
+//declare variables to call later
 var city = "Atlanta";
 var latitude = "";
 var longitude = "";
 
 //variable for moment.js 
-var now = moment();
+var time = moment();
 
 var citiesArray = ["Atlanta"];
 
@@ -11,7 +12,7 @@ var citiesArray = ["Atlanta"];
 var APIKey = "9dfa6457815c2b95699d77e603110552"
 
 var forecast = $("#five-day-forecast")
-var currentWeatherDisplay = $("#current-weather")
+var currentWeatherCard = $("#current-weather")
 
 //Event listener and JQuery val method to return value of first matched element in the OpenWeatherAPI data
 $("#submit-btn").on("click", function(){
@@ -27,16 +28,17 @@ $(document).keypress(
     function(event){
         if (event.which == '13') {
             event.preventDefault();
-            console.log("hello")
+            console.log("Enter is working!")
             city = $("#user-input").val();
             console.log("typed city: " + city);
             
             openWeatherAPIRequestFive();
+            $("#user-input").val("")
             openWeatherAPIRequest();
             $("#user-input").val("")
 
             
-            }    
+        }    
     });
 
 //checks to see which cities are in the array and stores new cities
@@ -64,10 +66,10 @@ function openWeatherAPIRequest() {
 
         saveCityToArray(response);
         $("#current-city-name").text(response.name);
-        $("#current-date").text(now.format("MMMM Do YYYY"));
+        $("#current-date").text(time.format("MMMM Do YYYY"));
     
         console.log("Currently saved cities:  ", citiesArray);
-        currentWeatherDisplay.empty();
+        currentWeatherCard.empty();
         forecast.empty();
         latitude = response.coord.lat;
         longitude = response.coord.lon;
@@ -160,7 +162,7 @@ if (current.uvi <= 2) {
     currentUV.append("<span id='uvi-high'>" + current.uvi);
 }
 
-currentWeatherDisplay.append(currentTemp, currentHumidity, currentWind, currentUV);
+currentWeatherCard.append(currentTemp, currentHumidity, currentWind, currentUV);
 console.log(current);
 };
 
