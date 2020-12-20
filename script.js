@@ -91,7 +91,7 @@ function openWeatherAPIRequestFive() {
 
         //displayFiveDayForecast(response);
         for (var i = 3; i < response.list.length; i = i+8){
-        displayFiveDayForecast(response.list[i], response.list[i].dt_txt)
+        fiveDayForecast(response.list[i], response.list[i].dt_txt)
         }
     });
 
@@ -167,7 +167,7 @@ console.log(current);
 
 
 
-function displayFiveDayForecast(daily, date) {
+function fiveDayForecast(daily, date) {
 
 var temp = Math.floor((daily.main.temp - 273.15) * 1.80 + 32);
 
@@ -181,7 +181,8 @@ var iconURL = "https://openweathermap.org/img/w/" + iconcode + ".png";
 var icon = $("<img class='icons' src=" + iconURL + " alt='Weather icon'>");
 
 var futureTemp = $("<h5>").text("Temp:  " + temp + " °F");
-var futureHumidity = $("<h5>").text("Humidity: " + daily.humidity + "%");
+var futureHumidity = $("<h5>").text("Humidity: " + daily.main.humidity + "%");
+console.log(daily)
 
 cardBody.append(cardTitle, $("<hr>"), icon, futureTemp, futureHumidity);
 card.append(cardBody);
