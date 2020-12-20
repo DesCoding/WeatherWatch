@@ -1,6 +1,6 @@
 # Weather Watch
 
-Users search this weather dashboard to see current and future weather conditions.  This app was created using HTML, CSS, JavaScript, and API https://openweathermap.org/apiwhich provides weather data.  Moments.js was used to populate dates and local storage is used to save search history.
+Users can search this weather dashboard to see current and future weather conditions by city.  This app was created using HTML, CSS, JavaScript, and API https://openweathermap.org/apiwhich provides weather data.  Moments.js was used to populate dates and local storage is used to save search history.
 
 # Deployed
 

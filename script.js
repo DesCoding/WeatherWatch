@@ -132,7 +132,7 @@ function coordinates(latitude, longitude) {
         $(".city-btn").on("click", function () {
             console.log("clicked");
             city = $(this).text();
-            console.log("clicked city: " + this.text());
+            console.log("clicked city: " + $(this).text());
 
             openWeatherAPIRequest();
             openWeatherAPIRequestFive();
