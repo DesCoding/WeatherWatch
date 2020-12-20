@@ -17,70 +17,61 @@
     <header>
         <h1>Weather Watch</h1>
     </header>
-    <div class="container">
+        <div class="my-container">
 
-        <div class="row main-row">
-    
-    
-            <aside class="col-sm-2" id="side-bar">
-    
-                <h5 class="text-center">Search for a city</h5>
-                <form class="form-inline">
-                    <div class="form-group mx-sm-3 mb-2">
-    
-                        <input class="" id="user-input">
-                    </div>
-                    <button type="button" class="btn btn-dark mb-2 " id="submit-btn"><i class="fa fa-search"
-                            aria-hidden="true"></i></button>
-                </form>
-    
-                <div class="button-group ">
-               
-                    
-    
-                   
-                </div>
-                
-            </aside>
-    
-    
-            <main class="col-sm-9">
-    
-    
-                <div class="card row" id="current-city-info">
-                    <div class="card-body">
-                        <h2 class="card-title current-card">
-                            <span id="current-city-name">Atlanta  </span> | 
-                            <span id="current-date">  07/22/2020  </span> |   
-                            <img id='current-icon' src="" alt='Weather icon'>
-                            <hr>
-                        </h2>
-    
-                        <div id="current-weather">
-    
-                        </div>
-                        
-                    </div>
-                </div>
-    
-    
-    
-                <h2>5-Day Forecast:</h2>
-                <div class="row" id="five-day-forecast">
-                   
-    
-                </div>
-    
-            </main>
-    
-    
-        </header>
-        </div>
+            <div class="row main-row">
         
-          
+        
+                <aside class="col-sm-3" id="side-bar">
+        
+                    <h5 class="text-center">Search for your city</h5>
+                    <form class="form-inline">
+                        <div class="form-group mx-sm-3 mb-2">
+        
+                            <input class="" id="user-input">
+                        </div>
+                        <button type="button" class="btn btn-dark mb-2 " id="submit-btn"><i class="fa fa-search"
+                                aria-hidden="true"></i></button>
+                    </form>
+        
+                    <div class="button-group "></div>
+                    
+                </aside>
+        
+        
+                <main class="col-lg-8">
+        
+        
+                    <div class="card row" id="current-city-info">
+                        <div class="card-body">
+                            <h2 class="card-title current-card">
+                                <span id="current-city-name"></span> | 
+                                <span id="current-date"> </span> |   
+                                <img id='current-icon' src="" alt='Weather icon'>
+                                <hr>
+                            </h2>
+        
+                            <div id="current-weather"></div>
+                            
+                        </div>
+                    </div>
+        
+        
+        
+                    <h2>5-Day Forecast:</h2>
+                    <div class="row" id="five-day-forecast"></div>
+        
+                </main>
+            </div>
+        </div>     
+   
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAayUREzm6gydcCBnHzTXcnN4PsneoLays&libraries=places"></script>
         <script src="script.js"></script>
 
 </body>
+
 </html>
+
+

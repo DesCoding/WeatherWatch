@@ -1,7 +1,7 @@
 
 header{
 text-align: center;
-padding: 20px;
+padding: 10px;
 background: teal;
 height: 100px;
 color: white;
@@ -9,24 +9,24 @@ font-family:'Courier New', Courier, monospace;
 }
 
 h1{
-    font-size: 60px ;
+    font-size: 70px ;
+}
 
-}
 h2 {
-    font-size: 40px;
+    font-size: 50px;
 }
+
 #side-bar {
-    background-color: rgb(230, 230, 230);
-  
-    
+    background-color: rgb(150, 214, 223);
 }
+
 
 aside {
     padding-top: 5px;
     margin: 10px;
 }
 
-.container {
+.my-container {
    margin-left: 60px;
     
 }
@@ -35,67 +35,69 @@ aside {
 }
 
 #current-city-info {
-    
     margin-top: 10px;
     height: 500px;
     margin-bottom: 30px;
-   
-
-    
+    border-style: solid;
+    border-color: rgb(145,  188, 226); 
 }
+
+
 .daily-forecast{
-    margin: 10px; 
+    margin: 5px; 
     margin-top: 10px;
-    width: 16rem !important;
-    
+    width: 15rem !important;
+    float: left;
+    border-style: solid;
+    border-color:rgb(145,  188, 226);
 } 
 
-#five-day-forecast {
-    width: 100%;
-    background-origin: padding-box;
+#user-input {
+position: center;
+padding: 5%;
 }
+
 
 .button-group {
     margin-top: 15px;
-    
 }
+
 h4 {
     padding-top: 50px;
 }
 
 .card {
-    width: 1400px;
+    width: 1475px;
 }
+
 .current-card {
-    width: 1350px;
+    width: 1400px;
 }
 
 .main-row {
     height: 850px;
 }
+
 #uvi-low {
     background-color: rgb(130, 255, 92);
     border-radius: 5px;
     padding: 10px;
-    
 }
 
 #uvi-mid {
     background-color: rgb(255, 190, 71);
     border-radius: 5px;
     padding: 10px;
-    
-
 }
 
 #uvi-high {
     background-color: rgb(255, 80, 80);
     border-radius: 5px;
     padding: 10px;
-    
 }
+
 @media screen and (max-width: 1750px){
-    .my-container {
+    .container {
         margin-left: 10px;
         
     }
@@ -103,7 +105,7 @@ h4 {
         width: 1000px;
     }
     .current-card {
-        width: 950px;
+        width: 1000px;
     }
     .daily-forecast{
         margin: 5px; 
@@ -114,7 +116,7 @@ h4 {
 
 }
 @media screen and (max-width: 1350px){
-    .my-container {
+    .container {
         margin-left: 0;
         margin-right: 0;
     }
@@ -130,8 +132,8 @@ h4 {
    
 }
 
-@media screen and (max-width: 750px){
-    .my-container {
+@media screen and (max-width: 1350px){
+    .container {
         margin: auto;
         
     }

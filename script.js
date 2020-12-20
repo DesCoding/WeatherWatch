@@ -1,6 +1,7 @@
-var city = $("#user-input").val();
+var city = "Atlanta";
 var latitude = "";
 var longitude = "";
+
 //variable for moment.js 
 var now = moment();
 
@@ -18,6 +19,7 @@ $("#submit-btn").on("click", function(){
     console.log("typed city: " + city);
 
     openWeatherAPIRequest();
+    openWeatherAPIRequestFive();
 });
 
 //use keypress to detect if enter was pressed and use prevent default to determine if method was called by an event handler
@@ -25,11 +27,15 @@ $(document).keypress(
     function(event){
         if (event.which == '13') {
             event.preventDefault();
-            city = $("user-input").val();
+            console.log("hello")
+            city = $("#user-input").val();
             console.log("typed city: " + city);
-
+            
+            openWeatherAPIRequestFive();
             openWeatherAPIRequest();
-            $("#user-input:").val("")
+            $("#user-input").val("")
+
+            
             }    
     });
 
@@ -40,7 +46,8 @@ function saveCityToArray(object) {
         return;
     } else {
         citiesArray.push(object.name);
-        storedCities();
+        displayStoredCities();
+        displayFiveDayForecast();
     };
 };
 
@@ -85,22 +92,9 @@ function openWeatherAPIRequestFive() {
         for (var i = 3; i < response.list.length; i = i+8){
         displayFiveDayForecast(response.list[i], response.list[i].dt_txt)
         }
-        // $("#current-city-name").text(response.name);
-        // $("#current-date").text(now.format("dddd mmmm do"));
-    
-        // console.log("Currently saved cities:  ", citiesArray);
-        // currentWeatherDisplay.empty();
-        // forecast.empty();
-        // latitude = response.coord.lat;
-        // longitude = response.coord.lon;
-
-        // coordinates (latitude, longitude);
     });
 
-    
-
 };
-
 
 
 //Create buttons for city info
@@ -131,19 +125,13 @@ function coordinates(latitude, longitude) {
 
         currentWeather(response.current);
         console.log(response);
-        //for loop to find five day forecast
-        // for (i = 1; i < 6; i++){
-
-        //     console.log("five day: ", response.daily[i]);
-        //     displayFiveDayForecast(response.daily[i], now.add(i, 'days').foremat("dddd"));
-        // };
-
+       
         generateButtons();
 
         $(".city-btn").on("click", function () {
             console.log("clicked");
             city = $(this).text();
-            console.log("clicked city: " + this.text())
+            console.log("clicked city: " + this.text());
 
             openWeatherAPIRequest();
             openWeatherAPIRequestFive();
@@ -151,7 +139,7 @@ function coordinates(latitude, longitude) {
 
     });
 };
-
+//adds icon for current conditions
 function currentWeather(current) {
 var iconcode = current.weather[0].icon;
 var iconURL = "https://openweathermap.org/img/w/" + iconcode + ".png";
@@ -179,11 +167,9 @@ console.log(current);
 
 
 function displayFiveDayForecast(daily, date) {
-console.log("here?")
-console.log("daily", daily)
+
 var temp = Math.floor((daily.main.temp - 273.15) * 1.80 + 32);
 
-console.log(temp)
 var card = $("<div class='card daily-forecast'>");
 //Create card div and adding date parameter
 var cardBody = $("<div class='card-body'>");
