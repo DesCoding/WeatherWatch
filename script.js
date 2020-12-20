@@ -32,12 +32,12 @@ $(document).keypress(
             city = $("#user-input").val();
             console.log("typed city: " + city);
             
-            openWeatherAPIRequestFive();
-            $("#user-input").val("")
+
             openWeatherAPIRequest();
             $("#user-input").val("")
-
-            
+            openWeatherAPIRequestFive();
+            $("#user-input").val("")
+         
         }    
     });
 
@@ -48,8 +48,7 @@ function saveCityToArray(object) {
         return;
     } else {
         citiesArray.push(object.name);
-        displayStoredCities();
-        displayFiveDayForecast();
+       storeCities();
     };
 };
 
