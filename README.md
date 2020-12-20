@@ -9,6 +9,6 @@ Repo Link:  https://github.com/DesCoding/WeatherWatch.git
 Site Link:  https://descoding.github.io/WeatherWatch/index.html
 
 # Demo
-![Demo](Assets/WeatherWatchApp.png)
+![Demo](Assets/WeatherWatchDemo.png)
 
 
